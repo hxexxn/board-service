@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout}">
+
+<head>
+    <title>회원가입 페이지</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/board_anoymous.css}">
+
+</head>
+
+<main layout:fragment="content">
+
+    <section class="board-container">
+
+        <div class="board-head">
+            
+            <div style="width: 10%;">
+                NO
+            </div>
+
+            <div style="width: 60%;">
+                TITLE
+            </div>
+
+            <div style="width: 10%;">
+                DATE
+            </div>
+
+            <div style="width: 10%;">
+                VIEW
+            </div>
+        </div>
+
+        <div class="board-content">
+            
+            <div style="width: 10%;">
+                10
+            </div>
+
+            <div style="width: 60%;">
+                제목
+            </div>
+
+            <div style="width: 10%;">
+                2022-10-24
+            </div>
+
+            <div style="width: 10%;">
+                0
+            </div>
+        </div>
+
+        <div class="board-btn">
+            <div>
+                <!-- <a th:href="@{/board/write}">등록</a> -->
+            </button>
+            </div>
+        </div>
+
+
+        
+    </section>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/user_login.js"></script>
+
+
+</main>
+
+</html>

@@ -1,0 +1,65 @@
+/* font-family: 'Noto Sans KR', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+html {
+    font-size: 16px;
+    position: relative;
+    min-height: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+a,
+p,
+span,
+button,
+input {
+    text-decoration: none;
+    outline: none;
+}
+
+.write-container {
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.write-head > p, .write-content > p {
+    font-size: 0.9rem;
+}
+
+input[type=text] {
+    width: 99%;
+    height: 2rem;
+    padding-left: 5px;
+    border: 1px solid #eee;
+}
+
+input[type=text]:focus, textarea:focus  {
+    border: 1px solid #20B2AA;
+}
+
+textarea {
+    width: 98.7%;
+    height: 10rem;
+    padding: 5px;
+    border: 1px solid #eee;
+    outline: none;
+}
+
+.wrtie-btn {
+    all: unset;
+    width: 200px;
+    height: 2rem;
+    color: white;
+    background-color: #20B2AA;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    margin-top: 30px;
+}

@@ -1,0 +1,141 @@
+/* font-family: 'Noto Sans KR', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* font-family: 'Abril Fatface', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+/* font-family: 'Bebas Neue', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+html {
+    font-size: 16px;
+    position: relative;
+    min-height: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+a,
+p,
+span,
+button,
+input {
+    text-decoration: none;
+    outline: none;
+}
+
+.container {
+    width: 100%;
+}
+
+
+/* header */
+header {
+    padding: 50px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #20B2AA;
+    color: white;
+}
+
+header a, header button { 
+    color: white;
+    transition: all 0.2s;
+}
+
+.header-title {
+    font-size: 1.4rem;
+    font-family: 'Bebas Neue', cursive;
+    width: 50%;
+}
+
+.header-title > h1 > a:hover {
+    color: black;
+}
+
+.header-menu {
+    /* border: 1px solid black; */
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.header-menu > div:not(:last-child) {
+    margin-right: 100px;
+}
+
+.logout {
+    all: unset;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.header-menu > div > a:hover,
+.logout:hover {
+    color: black;
+}
+
+
+
+/* nav bar */
+.nav-bar {
+    background-color: #eee;
+    height: 75px;
+    padding: 0px 200px;
+}
+
+.nav-bar > ul {
+    /* list-style-type: none; */
+    padding-left: 0;
+    margin: 0;
+    line-height: 75px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.nav-bar > ul > li {
+    display: inline-block;
+}
+
+/* main */
+main {
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-bottom: 100px;
+    text-align: justify;
+}
+
+/* main > section {
+    padding-bottom: 100px;
+} */
+
+
+.main {
+    text-align: center;
+    font-size: 0.9rem;
+}
+/* footer */
+footer {
+    height: 100px;
+    background-color: #20B2AA;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    font-size: 0.8rem;
+}

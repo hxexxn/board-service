@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout}">
+
+<head>
+    <title>회원가입 페이지</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/user_join.css}">
+
+</head>
+
+<main layout:fragment="content">
+
+    <section class="join-container">
+
+        <form class="join-form" method="post" id="join-form" th:action="@{/auth/join}">
+
+            <h1>Create a New Account!</h1>
+
+            <!-- id -->
+            <div class="input-box">
+                <div>
+                    <p>아이디</p>
+                </div>
+                <div>
+                    <input type="text" id="user_id" name="user_id">
+                </div>
+                <div class="ajax-check">
+                    <div class="dup-id"></div>
+                    <div class="check-id"></div>
+                </div>
+            </div>
+
+            <!-- password -->
+            <div class="input-box">
+                <div>
+                    <p>비밀번호</p>
+                </div>
+                <div>
+                    <input type="password" id="user_pw" class="u_pw" name="user_pw">
+                </div>
+            </div>
+
+            <!-- rePassword -->
+            <div class="input-box">
+                <div>
+                    <p>비밀번호 확인</p>
+                </div>
+                <div>
+                    <input type="password" id="user_rePw" class="u_pw" name="user_rePw">
+                </div>
+                <div class="ajax-check">
+                    <div class="cor-pw"></div>
+                    <div class="check-pw"></div>
+                </div>
+            </div>
+
+            <!-- nickname -->
+            <div class="input-box">
+                <div>
+                    <p>닉네임</p>
+                </div>
+                <div>
+                    <input type="text" id="user_nick" name="user_nick">
+                </div>
+                <div class="ajax-check">
+                    <div class="dup-nick"></div>
+                    <div class="check-nick"></div>
+                </div>
+            </div>
+
+            <!-- email -->
+            <div class="input-box">
+                <div>
+                    <p>이메일</p>
+                </div>
+                <div>
+                    <input type="email" id="user_email" name="user_email">
+                </div>
+                <div class="ajax-check">
+                    <div class="dup-email"></div>
+                    <div class="check-email"></div>
+                </div>
+            </div>
+
+            <!-- join button -->
+            <div class="btn-box">
+                <button type="button" class="join-btn" id="userSubmit">회원 가입</button>
+            </div>
+
+        </form>
+
+    </section>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/user_join.js"></script>
+
+    <div id="modal" class="modal-background">
+
+        <div class="modal-overlay">
+            <div class="model-title">
+                <p>Welcome to CRUD BOARD!</p>
+            </div>
+            <div class="model-content">
+                회원 가입을 축하드립니다.
+            </div>
+            <div class="modal-btn">
+                <a class="home-btn" th:onclick="return submit_form()">홈으로 가기</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/user_join.js"></script>
+
+
+</main>
+
+</html>

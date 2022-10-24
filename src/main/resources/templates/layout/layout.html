@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- CSS only -->
+    <link href="/css/index.css" rel="stylesheet">
+
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <header th:replace="fragments/header::header"></header>
+
+    <main layout:fragment="content">
+
+
+    </main>
+
+    <footer th:replace="fragments/footer::footer"></footer>
+
+</body>
+</html>

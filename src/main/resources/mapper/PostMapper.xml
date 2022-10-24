@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.www.mapper.PostMapper">
+
+    <!-- 글 등록 -->
+    <insert id="post_write">
+        insert into post_tbl(post_title, post_content, post_writer) 
+        values (#{post_title}, #{post_content}, #{post_writer})
+    </insert>
+    
+    <!-- 게시판 페이징 및 검색 -->
+    <select id="get_list_paging" resultType="com.board.www.model.PostDTO">
+        select * FROM post_tbl order by post_no DESC
+
+    </select>
+
+    <!--  게시판 페이징 번호  -->
+	<select id="get_total" resultType="int">
+        select count(*) from post_tbl
+        <if test="keyword != null">
+            <![CDATA[
+			where post_title like concat('%',#{keyword},'%')
+			]]>
+			</if>
+    </select>
+
+    <!-- 게시글 조회수 -->
+    <update id="post_view_count">
+        update post_tbl
+        set post_view = post_view + 1
+        where post_no = #{post_no}
+    </update>
+
+    <!-- 게시글 상세보기 -->
+    <select id="post_select" resultType="com.board.www.model.PostDTO">
+        select * from post_tbl
+        where post_no = #{post_no}
+    </select>
+
+    <!-- 게시글 수정 -->
+    <update id="post_update">
+        update post_tbl set post_title = #{post_title}, post_content = #{post_content}
+        where post_no = #{post_no}
+    </update>
+</mapper>

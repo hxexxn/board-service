@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout}">
+
+<head>
+    <title>회원가입 페이지</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/board_write.css}">
+
+</head>
+
+<main layout:fragment="content">
+
+    <section class="modify-container">
+
+        <form id="modify-form" method="post" th:action="@{/board/modify}">
+            <div class="write-head">
+                <p>제목</p>
+                <input type="text" class="write-title" id="post_title" name="post_title" th:value="${dto.post_title}">
+                <input type="hidden" id="post_writer" name="post_writer" th:value="${session.user_nick}">
+                <input type="hidden" id="post_no" name="post_no" th:value="${dto.post_no}">
+            </div>
+
+            <div class="write-content">
+                <p>내용</p>
+                <textarea class="write-text" id="post_content" name="post_content" th:value="${dto.post_content}"></textarea>
+            </div>
+
+            <div>
+                <button type="submit" class="wrtie-btn">등록</button>
+            </div>
+        </form>
+        
+    </section>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/user_login.js"></script>
+
+
+</main>
+
+</html>

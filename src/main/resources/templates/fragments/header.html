@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="header" class="header">
+
+    <div class="container">
+        <!-- header -->
+        <header>
+            <article class="header-title">
+                <h1>
+                    <a th:href="@{/}">CRUD BOARD</a>
+                </h1>
+            </article>
+            <article class="header-menu">
+                <th:block th:if="${session.user_id == null}">
+                    <div>
+                        <a th:href="@{/auth/login}">Login</a>
+                    </div>
+                    <div>
+                        <a th:href="@{/auth/join}">Sign Up</a>
+                    </div>
+                </th:block>
+
+                <th:block th:unless="${session.user_id == null}">
+                    <div>
+                        <a th:href="@{/login}">
+                            <span>Hello,
+                                <span th:text="${session.user_nick}"></span>
+                            </span>
+                        </a>
+                    </div>
+                    <div>
+                        <form th:action="@{/auth/logout}" method="get">
+                            <button type="submit" class="logout">로그아웃</button>
+                        </form>
+                    </div>
+                </th:block>
+                
+            </article>
+        </header>
+        <!-- header -->
+
+        <!-- nav bar -->
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a th:href="@{/board/freeboard}">
+                        자유 게시판
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+</div>
+
+</html>

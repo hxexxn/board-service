@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout}">
+
+<head>
+    <title>회원가입 페이지</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/user_login.css}">
+
+</head>
+
+<main layout:fragment="content">
+
+    <section class="join-container">
+
+        <form method="post" id="login-form" th:action="@{/auth/login}">
+
+            <h1>Login Account</h1>
+
+            <!-- id -->
+            <div class="input-box">
+                <div>
+                    <p>아이디</p>
+                </div>
+                <div>
+                    <input type="text" id="user_id" name="user_id">
+                </div>
+            </div>
+
+            <!-- password -->
+            <div class="input-box">
+                <div>
+                    <p>비밀번호</p>
+                </div>
+                <div>
+                    <input type="password" id="user_pw" name="user_pw">
+                </div>
+                
+                <div class="ajax-check">
+                    <p th:if="${loginErrorMsg}" class="dup-id" th:text="${loginErrorMsg}"></p>
+                </div>
+            </div>
+
+            <!-- join button -->
+            <div class="btn-box">
+                <button class="login-btn" id="userSubmit">로그인</button>
+            </div>
+
+        </form>
+
+    </section>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/user_login.js"></script>
+
+
+</main>
+
+</html>
